@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="login" id="colorbg">
+            <a class="text" id="signUp" href="signup.html">Sign Up</a>
+            <a class="text" id="login" href="login.html">Login</a>
+        </div>
+
+
+        <div class="top-nav">
+
+            <img src="Images/logo.png">
+
+            <div class="app-name" style="color:rgb(63, 60, 60);">
+                <h3>MARVINS</h3>
+            </div>
+
+            <div class="listContainer">
+                <nav>
+                    <ul class="top-list">
+                        <li id="home">Home</li>
+                        <li id="product">Products</li>
+                        <li>Blog</li>
+                        <li>Contact</li>
+                        <a href="#"><i id="close" class="fas fa-times"></i></a>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+
+            <div id="mobile">
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </div>
+
+
+        <div class="page-header">
+
+            <h2>#let's_talk</h2>
+            <p>Le</p>
+
+        </div>
+
+        <div id="cart" class="active">
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>SubTotal</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#"><i class="fas fa-times cirlce"></i></a></td>
+                        <td><img src="Images/cloth1.webp" alt=""></td>
+                        <td>Cartoon Astronault T-Shirt</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><i class="fas fa-times cirlce"></i></a></td>
+                        <td><img src="Images/cloth1.webp" alt=""></td>
+                        <td>Cartoon Astronault T-Shirt</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#"><i class="fas fa-times cirlce"></i></a></td>
+                        <td><img src="Images/cloth1.webp" alt=""></td>
+                        <td>Cartoon Astronault T-Shirt</td>
+                        <td>$118.19</td>
+                        <td><input type="number" value="1"></td>
+                        <td>$118.19</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="cart-add" class="active">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter your Coupon">
+                    <button class="normal">Apply</button>
+                </div>
+            </div>
+
+            <div id="subtotal">
+                <h3>Carts Total</h3>
+                <table>
+                    <tr>
+                        <td>Cart SubTotal</td>
+                        <td>$336</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>$336 </strong></td>
+                    </tr>
+                </table>
+                <button class="normal">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Create Product</title>
+</head>
+
+<body>
+    <form class="form ">
+        <h1 class="form__title">Create Product</h1>
+        <div class="form__input-group">
+            <input type="text" id="productName" class="form__input" autofocus placeholder="Enter Product Name" required>
+            <div class="form__input-error-message"></div>
+        </div>
+
+
+        <div class="form__input-group">
+            <input type="text" class="form__input" id="productPrice" autofocus placeholder="Enter Product Price" required>
+            <div class="form__input-error-message" id="message"></div>
+        </div>
+
+        <select id="category" style="width: 100%; margin-bottom: 10px;" multiple>
+            <option disabled>Select Category</option>
+            </select>
+
+
+        <div class="form__input-group">
+            <textarea class="form__input" id="productDescription" autofocus placeholder="Enter Product Description" required></textarea>
+            <div class="form__input-error-message" id="message"></div>
+        </div>
+
+        <div class="form__input-group">
+            <input type="file" class="form__input" id="productPics" autofocus placeholder="Add Product Image" required>
+            <div class="form__input-error-message" id="message"></div>
+        </div>
+
+        <button id="create" class="form__button loginBtn" type="submit">Create</button>
+
+    </form>
+</body>
+
+<script src="js/product.js"></script>
+
+</html>

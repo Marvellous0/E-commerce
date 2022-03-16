@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+}
+
+.container .sidebar-collapsed-back .side-nav {
+    width: 230px;
+    transition: all 100ms ease-in-out;
+}
+
+.side-nav {
+    position: absolute;
+    float: left;
+    width: 220px;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+    background-color: #202121;
+    color: #aaabae;
+    z-index: 999;
+}
+
+.side-nav p {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 90px;
+    cursor: pointer;
+}
+
+.logo {
+    width: 22%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 20px;
+    left: 170px;
+}
+
+.sidebar-icon {
+    position: relative;
+    float: left;
+    text-align: center;
+    line-height: 1;
+    font-size: 18px;
+    padding: 6px 8px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    color: #FFF;
+    background-clip: padding-box;
+    background: #68AE00;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.top-nav {
+    margin-left: 200px;
+    padding: 20px 50px;
+    position: relative;
+    display: flex;
+    height: 100px;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.app-name {
+    font-weight: bolder;
+    font-size: 20px;
+    color: orangered;
+}
+
+.listContainer {
+    display: flex;
+    flex: 2;
+    justify-content: center;
+}
+
+.top-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 70px;
+    cursor: pointer;
+}
+
+.top-list :hover {
+    color: lightgrey;
+    transition: .1s;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
