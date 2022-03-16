@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/AdminDashboard.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>List Product</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- <div class="login" id="colorbg"> -->
+        <!-- <a class="text" id="signUp" href="signup.html">Sign Up</a> -->
+        <!-- <a class="text" id="login" href="login.html">LogOut</a> -->
+        <!-- </div> -->
+        <div class="container sidebar-collapsed-back">
+
+            <div class="top-nav">
+
+                <div class="app-name">
+                    <h2>Shoppy</h2>
+                </div>
+
+                <div class="listContainer">
+                    <nav>
+                        <ul class="top-list">
+                            <li id="home">Home</li>
+                            <li id="product">Products</li>
+                            <li>Blog</li>
+                            <li>Contact</li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="icons">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-shopping-bag" id="cartBtn"></i>
+                    <span>0</span>
+                </div>
+
+            </div>
+
+            <div class="side-nav">
+                <div class="logo">
+                    <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a>
+                </div>
+
+                <p id="createProductBtn" class="btn">Create Product</p>
+                <p id="createCategoryBtn" class="btn">Create Category</p>
+            </div>
+
+
+        </div>
+
+
+        <!-- <div class="top-nav"> -->
+
+        <div id="products" class="active">
+            <div class="pro-container">
+                <div class="pro">
+                    <img id="img" src="Images/cloth1.webp" alt="No Img found">
+                    <div class="description">
+                        <span>adidas</span>
+                        <h5>Cartoon Astronault T-Shirts</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>$78</h4>
+                    </div>
+                    <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="pagination">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#"><i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- </div> -->
+
+</body>
+<script src="js/listProduct.js"></script>
+
+</html>

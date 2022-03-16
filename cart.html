@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
     <title>E-Commerce</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://js.stripe.com/v3/"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
@@ -37,14 +38,15 @@
                         <li id="product">Products</li>
                         <li>Blog</li>
                         <li>Contact</li>
-                        <a href="#"><i id="close" class="fas fa-times"></i></a>
+                        <i id="close" class="fas fa-times"></i>
                     </ul>
                 </nav>
             </div>
 
             <div class="icons">
                 <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-bag"></i>
+                <i class="fas fa-shopping-bag" id="cartBtn"></i>
+                <span>0</span>
             </div>
 
             <div id="mobile">
@@ -72,33 +74,21 @@
                         <td>SubTotal</td>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="#"><i class="fas fa-times cirlce"></i></a></td>
-                        <td><img src="Images/cloth1.webp" alt=""></td>
-                        <td>Cartoon Astronault T-Shirt</td>
-                        <td>$118.19</td>
-                        <td><input type="number" value="1"></td>
-                        <td>$118.19</td>
+
+                <tbody class="product">
+                    <tr class="cart-rows">
+                        <td><button class="remove"></button></td>
+                        <td></td>
+                        <td></td>
+                        <td id="cart-price"></td>
+                        <td id="cart-quantity"></td>
+                        <td id="total"></td>
                     </tr>
-                    <tr>
-                        <td><a href="#"><i class="fas fa-times cirlce"></i></a></td>
-                        <td><img src="Images/cloth1.webp" alt=""></td>
-                        <td>Cartoon Astronault T-Shirt</td>
-                        <td>$118.19</td>
-                        <td><input type="number" value="1"></td>
-                        <td>$118.19</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#"><i class="fas fa-times cirlce"></i></a></td>
-                        <td><img src="Images/cloth1.webp" alt=""></td>
-                        <td>Cartoon Astronault T-Shirt</td>
-                        <td>$118.19</td>
-                        <td><input type="number" value="1"></td>
-                        <td>$118.19</td>
-                    </tr>
+
                 </tbody>
+
             </table>
+
         </div>
 
         <div id="cart-add" class="active">
@@ -115,22 +105,23 @@
                 <table>
                     <tr>
                         <td>Cart SubTotal</td>
-                        <td>$336</td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Shipping</td>
                         <td>Free</td>
                     </tr>
-                    <tr>
-                        <td><strong>Total</strong></td>
-                        <td><strong>$336 </strong></td>
+                    <tr id="cont">
+
                     </tr>
                 </table>
-                <button class="normal">Proceed to Checkout</button>
+
+                <button class="normal" id="checkout">Proceed to Checkout</button>
             </div>
         </div>
 
         <script src="js/script.js"></script>
+
 </body>
 
 </html>

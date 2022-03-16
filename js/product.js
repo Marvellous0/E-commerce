@@ -21,7 +21,7 @@ const createProduct = () => {
             id: productArray.length + 1,
             productname: productName.value,
             productprice: productPrice.value,
-            productPics: productImage.value,
+            productPics: productImage.src,
             productdescription: productDescription.value,
             productCategory: [],
         }
@@ -33,7 +33,7 @@ const createProduct = () => {
 
         productArray.push(details);
         localStorage.setItem("productsList", JSON.stringify(productArray));
-
+        location.href = "/listProduct.html";
     })
 }
 
