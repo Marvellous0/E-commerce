@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/signup.css">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <form id="paymentForm" class="form">
+        <div class="form__input-group">
+            <input class="form__input" type="email" id="email-address" autofocus placeholder="Email Address" required />
+        </div>
+
+        <div class="form__input-group">
+            <input class="form__input" type="text" id="first-name" autofocus placeholder="First Name" required/>
+        </div>
+
+        <div class="form__input-group">
+            <input class="form__input" type="text" id="last-name" autofocus placeholder="Last Name" required/>
+        </div>
+
+        <button class="form__button" type="submit" onclick="payWithPaystack()"> Pay </button>
+
+    </form>
+
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <script>
+        const items = JSON.parse(localStorage.getItem('productIncart'));
+        let totalPrice = 0;
+        items.forEach((element) => {
+            totalPrice += element.price * element.quantity;
+        });
+        const paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener("submit", payWithPaystack, false);
+
+        function payWithPaystack(e) {
+            e.preventDefault();
+            let handler = PaystackPop.setup({
+                key: 'pk_test_ea17425b47da64bd00c0d23807964a4172da97a5',
+                email: document.getElementById("email-address").value,
+                amount: totalPrice * 100,
+                name: document.getElementById("first-name"),
+                ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+                onClose: function() {
+                    alert('Window closed.');
+                },
+                callback: function(response) {
+                    let message = 'Payment complete! Reference: ' + response.reference;
+                    alert(message);
+                }
+            });
+            handler.openIframe();
+        }
+    </script>
+</body>
+
+</html>

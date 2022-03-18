@@ -21,6 +21,7 @@ const Login = () => {
             return false;
         }
 
+
         loginObject = {
             nameVal: uName.value,
             passwordVal: psw.value,
@@ -34,7 +35,7 @@ const Login = () => {
                 location.href = "/AdminDashboard.html";
                 break;
             } else {
-                alert("Failed");
+                location.href = "/customerDashboard.html";
                 break;
             }
         }

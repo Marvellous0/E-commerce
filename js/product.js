@@ -1,6 +1,6 @@
 var productArray = []
-if (JSON.parse(localStorage.getItem('productsList'))) {
-    productArray = JSON.parse(localStorage.getItem('productsList'));
+if (JSON.parse(localStorage.getItem('productList'))) {
+    productArray = JSON.parse(localStorage.getItem('productList'));
 } else {
     productArray = []
 }
@@ -32,10 +32,11 @@ const createProduct = () => {
         details['productCategory'].push(selectedValues);
 
         productArray.push(details);
-        localStorage.setItem("productsList", JSON.stringify(productArray));
-        location.href = "/listProduct.html";
+        localStorage.setItem("productList", JSON.stringify(productArray));
+        location.href = "/AdminDashboard.html";
     })
 }
+
 
 var category = JSON.parse(localStorage.getItem('categoryList'));
 

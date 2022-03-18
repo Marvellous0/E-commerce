@@ -19,7 +19,8 @@
     bottom: 0;
     background-color: #202121;
     color: #aaabae;
-    z-index: 999;
+    z-index: 20;
+    display: none;
 }
 
 .side-nav p {
@@ -60,13 +61,14 @@
     color: white;
 }
 
-.top-nav {
+
+/* .top-nav {
     margin-left: 200px;
     padding: 20px 50px;
-    position: relative;
+    position: fixed;
     display: flex;
     height: 100px;
-    max-width: 100%;
+    width: 100vw;
     justify-content: space-between;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -76,7 +78,7 @@
     font-weight: bolder;
     font-size: 20px;
     color: orangered;
-}
+} */
 
 .listContainer {
     display: flex;
@@ -101,4 +103,10 @@
 .icons {
     display: flex;
     gap: 15px;
+}
+
+.sidebar-nav .activey {
+    right: 100px;
+    transition: 0.3s;
+    display: flex;
 }
