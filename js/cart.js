@@ -14,33 +14,20 @@ cartBtn.addEventListener('click', () => {
     location.href = "/cart.html";
 })
 
+const availableCartNumber = () => {
+    let items = JSON.parse(localStorage.getItem('productIncart'));
+    let numberCount = document.querySelector('#count');
+    let productNumbers = items == null ? 0 : items.length;
+    numberCount.textContent = productNumbers;
+}
 
 const displayCart = () => {
     let cartItems = JSON.parse(localStorage.getItem('productIncart'));
     let pName = document.querySelector('#product-name');
     let pPrice = document.querySelector('#cart-price');
-    let pQuantity = document.querySelector('cart-quantity');
+    let pQuantity = document.querySelector('#cart-quantity');
     let uPrice = document.querySelector('#unitPrice');
     let total = document.querySelector('#total');
-    let totalCost = 0;
-
-    // cartItems.forEach((element) => {
-    //     const productId = element.productId;
-    //     console.log(productId)
-
-    //     let productDetails = JSON.parse(localStorage.getItem('productList'));
-    //     const productItem = productDetails.find(c => c.id == productId);
-
-    //     const modalItem = {
-    //         productName: productItem.productname,
-    //         categoryName: productItem.productCategory,
-    //         productDescription: productItem.productdescription,
-    //         unitPrice: productItem.productprice
-    //     }
-
-    //     pName.textContent = modalItem.productName;
-    //     pPrice.textContent = modalItem.unitPrice;
-    // });
 
     for (let i = 0; i < cartItems.length; i++) {
         const productId = cartItems[i].productId;
@@ -54,14 +41,20 @@ const displayCart = () => {
             unitPrice: productItem.productprice
         }
 
+    
         pName.textContent = modalItem.productName;
         pPrice.textContent = modalItem.unitPrice;
+        pQuantity.value = cartItems[i].quantity;
+        uPrice.textContent = cartItems[i].quantity * modalItem.unitPrice;
+        total.textContent = uPrice.textContent
 
-
+        pQuantity.addEventListener('change', () => {
+            uPrice.textContent = modalItem.unitPrice * pQuantity.value
+            // total.textContent = modalItem.unitPrice * pQuantity.value
+        })
     }
 
 }
-
 
 const removeCart = () => {
     let items = JSON.parse(localStorage.getItem('productIncart'));
@@ -73,7 +66,6 @@ const removeCart = () => {
     })
 
 }
-
 
 const checkOutBtn = document.querySelector('#checkout');
 checkOutBtn.addEventListener('click', (e) => {
@@ -89,6 +81,6 @@ checkOutBtn.addEventListener('click', (e) => {
 });
 
 
-
+availableCartNumber();
 displayCart();
 removeCart();

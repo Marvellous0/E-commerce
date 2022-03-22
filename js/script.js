@@ -108,6 +108,14 @@ const popUpModal = () => {
         totalPrice.textContent = uPrice * qty.value
     })
 
+    qty.addEventListener('change', () => {
+        let productDetails1 = JSON.parse(localStorage.getItem('productList'));
+        const productItem1 = productDetails1.find(c => c.id == addBtn.id);
+        let uPrice = productItem1.productprice;
+
+        totalPrice.textContent = uPrice * qty.value
+    })
+
     cartBtn.forEach(c => {
         c.addEventListener('click', () => {
             let items = JSON.parse(localStorage.getItem('productIncart'));

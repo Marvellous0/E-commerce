@@ -41,7 +41,7 @@
             <div class="icons">
                 <i class="fas fa-search"></i>
                 <i class="fas fa-shopping-bag" id="cartBtn"></i>
-                <span>0</span>
+                <span id="count">0</span>
             </div>
 
             <div id="mobile">
@@ -76,7 +76,7 @@
                         <td><img src="Images/cloth1.webp" alt=""></td>
                         <td id="product-name"></td>
                         <td id="cart-price"></td>
-                        <td id="cart-quantity"><input type="number" value=""></td>
+                        <td ><input type="number" id="cart-quantity" value=""></td>
                         <td id="unitPrice"></td>
                     </tr>
 
@@ -106,8 +106,9 @@
                         <td>Shipping</td>
                         <td>Free</td>
                     </tr>
-                    <tr id="total">
-
+                    <tr >
+                        <td>Total</td>
+                        <td id="total"></td>
                     </tr>
                 </table>
 

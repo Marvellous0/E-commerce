@@ -79,7 +79,7 @@ const popUpModal = () => {
     const plus = document.querySelector('#plus');
     const totalPrice = document.querySelector('#total-price');
     let qty = document.querySelector('#qty');
-
+    
 
     minus.addEventListener('click', () => {
         let productDetails1 = JSON.parse(localStorage.getItem('productList'));
@@ -102,23 +102,41 @@ const popUpModal = () => {
         totalPrice.textContent = uPrice * qty.value
     })
 
+    qty.addEventListener('change', () => {
+        let productDetails1 = JSON.parse(localStorage.getItem('productList'));
+        const productItem1 = productDetails1.find(c => c.id == addBtn.id);
+        let uPrice = productItem1.productprice;
+        
+        totalPrice.textContent = uPrice * qty.value
+    })
+
     cartBtn.forEach(c => {
         c.addEventListener('click', () => {
             let items = JSON.parse(localStorage.getItem('productIncart'));
             const modalContainer = document.querySelector('.modal-cotainer');
-            const modalBody = document.querySelector('.modal-body');
             const closes = document.querySelector('.close');
-          
+            const stars = document.querySelectorAll('.rating i');
+            const rate = document.querySelector('.rate');
+
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].addEventListener('click', () =>{
+                    rate.textContent = i + 1;
+                    rate.value = i + 1;
+                    stars[i].classList.add('active-star');
+                })
+            }
             const quantity = document.querySelector('#qty');
 
             addBtn.id = c.id;
 
             let productQty = 1;
+            let productRating = 0;
             if (items !== null) {
                 const addedItem = items.find(i => i.productId == addBtn.id);
                 addedItem == undefined ? productQty = 1 : productQty = addedItem.quantity
+                addedItem == undefined ? productRating = 0 : productRating = addedItem.rating
             }
-
+          
             let productDetails = JSON.parse(localStorage.getItem('productList'));
             const productItem = productDetails.find(c => c.id == addBtn.id);
 
@@ -127,11 +145,11 @@ const popUpModal = () => {
                 categoryName: productItem.productCategory,
                 productDescription: productItem.productdescription,
                 quantity: productQty,
+                rating : productRating,
                 unitPrice: productItem.productprice
             }
 
             modalContainer.classList.add('active');
-            console.log("feff");
             populateModal(modalItem);
             updateQuantity(productItem.productprice);
 
@@ -151,6 +169,8 @@ const populateModal = (modalItem) => {
     const unitPrice = document.querySelector('#unit-price');
     const qty = document.querySelector('#qty');
     const totalPrice = document.querySelector('#total-price');
+    const rate = document.querySelector('.rate');
+    rate.textContent = modalItem.rating,
     productName.textContent = modalItem.productName;
     qty.value = modalItem.quantity,
         categoryName.textContent = modalItem.categoryName;
@@ -192,12 +212,23 @@ const addToCart = () => {
         const quantity = document.querySelector('#qty');
         const modalContainer = document.querySelector('.modal-cotainer');
         let items = JSON.parse(localStorage.getItem('productIncart'));
-
+        const stars = document.querySelectorAll('.rating i');
+        const rate = document.querySelector('.rate');
+        const rateVal = rate.value;
+        for (let i = 0; i < stars.length; i++) {
+            stars[i].addEventListener('click', () =>{
+                rate.textContent = i + 1;
+                rateVal = i++;
+                stars[i].classList.add('active-star');
+            })
+        }
+        console.log(rateVal);
         const productItem = JSON.parse(localStorage.getItem('productList')).filter(i => i.id == addToCartBtn.id);
 
         const newProduct = {
             productId: addToCartBtn.id,
             quantity: quantity.value,
+            rating: rateVal
         }
 
 
@@ -210,6 +241,7 @@ const addToCart = () => {
                 const newCartItem = {
                     productId: addToCartBtn.id,
                     quantity: quantity.value,
+                    rating: rateVal
                 }
                 items.push(newCartItem);
                 localStorage.setItem('productIncart', JSON.stringify(items));
@@ -222,8 +254,8 @@ const addToCart = () => {
         }
 
         quantity.value = 1;
+        rate.value = 0;
         modalContainer.classList.remove('active');
-
     })
 
 }
@@ -234,6 +266,7 @@ const availableCartNumber = () => {
     let productNumbers = items == null ? 0 : items.length;
     numberCount.textContent = productNumbers;
 }
+
 
 displayProduct();
 popUpModal();
