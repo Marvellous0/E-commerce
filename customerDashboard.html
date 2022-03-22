@@ -36,7 +36,7 @@
         <div class="icons">
             <i class="fas fa-search"></i>
             <a href="/cart.html"><i class="fas fa-shopping-bag" id="cartBtn"></i></a>
-            <span>0</span>
+            <span id="count">0</span>
         </div>
 
         <div id="mobile">
@@ -48,6 +48,75 @@
 
     <div id="products" class="active">
         <div class="pro-container">
+
+        </div>
+    </div>
+    
+    <div class="modal-cotainer">
+        <i class="fas fa-times close"></i>
+        <div class="modal-body">
+            <div id="displayName">
+                <h2 id="product-name"></h2>
+
+                <img class="modal-img" src="/Images/cloth1.webp" alt="">
+
+                <div class="rating-container">
+                    <h4 class="modal-header">Ratings</h4>
+
+                    <div class="rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <h1 class="dot">.</h1>
+                        <h3 class="rate">4.5</h3>
+                    </div>
+                </div>
+
+                <div class="category-container">
+
+                    <h4 class="modal-header">Category</h4>
+                    <h3 id="category-name"></h3>
+                </div>
+
+            </div>
+
+            <div id="displaydesc">
+                <div class="product-description">
+                    <h4 class="modal-header-dark">Description</h4>
+                    <p class="desc">
+
+                    </p>
+                </div>
+
+                <div class="product-price">
+                    <h4 class="modal-header-dark">Unit Price</h4>
+                    <p class="price">#<span id="unit-price"></span></p>
+                </div>
+
+                <div class="product-quantity">
+                    <h4 class="modal-header-dark">Quantity</h4>
+                    <div class="qty-con">
+                        <div class="rounded-border" id="minus">
+                            <span class="navigate">-</span>
+                        </div>
+                        <input id="qty" type="number" min="1" />
+                        <div class="rounded-border" id="plus">
+                            <span class="navigate">+</span>
+                        </div>
+                    </div>
+
+                </div class="price-total">
+                <div class="total-container">
+                    <h4 class="modal-header-dark">Total Price</h4>
+                    <p class="price">#<span id="total-price"></span></p>
+                </div>
+
+                <div class="cart-con">
+                    <button class="addToCart"><i class="fas fa-shopping-cart cart" id="cartBtn"></i>  Add To Cart</button>
+                </div>
+            </div>
 
         </div>
     </div>
