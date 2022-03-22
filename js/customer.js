@@ -106,7 +106,7 @@ const popUpModal = () => {
         let productDetails1 = JSON.parse(localStorage.getItem('productList'));
         const productItem1 = productDetails1.find(c => c.id == addBtn.id);
         let uPrice = productItem1.productprice;
-        
+
         totalPrice.textContent = uPrice * qty.value
     })
 
@@ -267,6 +267,12 @@ const availableCartNumber = () => {
     numberCount.textContent = productNumbers;
 }
 
+const logOutBtn = document.querySelector('#log-out');
+logOutBtn.addEventListener('click', () =>{
+    localStorage.removeItem('loginInfo');
+    localStorage.removeItem('productIncart');
+    location.href = '/index.html';
+})
 
 displayProduct();
 popUpModal();

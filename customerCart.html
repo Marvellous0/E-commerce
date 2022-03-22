@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>E-Commerce</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="top-nav">
+
+            <img src="Images/logo.png">
+
+            <div class="app-name" style="color:rgb(63, 60, 60);">
+                <h3>MARVINS</h3>
+            </div>
+
+            <div class="listContainer">
+                <nav>
+                    <ul class="top-list">
+                        <li id="home">Home</li>
+                        <li id="product">Products</li>
+                        <li>Blog</li>
+                        <li>Contact</li>
+                        <li id="log-out">Log Out</li>
+                        <a href="#"><i id="close" class="fas fa-times"></i></a>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-shopping-bag" id="cartBtn"></i>
+                <span id="count">0</span>
+            </div>
+
+            <div id="mobile">
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </div>
+
+
+        <div class="page-header">
+
+            <h2>#let's_talk</h2>
+            <p>Patronise us and get 7% discount</p>
+
+        </div>
+
+        <div id="cart" class="active">
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>SubTotal</td>
+                    </tr>
+                </thead>
+
+                <tbody class="product">
+                    <tr class="cart-rows">
+                        <td><button class="remove"><i class="fas fa-times circle remove"></i></td>
+                        <td><img src="Images/cloth1.webp" alt=""></td>
+                        <td id="product-name"></td>
+                        <td id="cart-price"></td>
+                        <td ><input type="number" id="cart-quantity" value=""></td>
+                        <td id="unitPrice"></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="cart-add" class="active">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter your Coupon">
+                    <button class="normal">Apply</button>
+                </div>
+            </div>
+
+            <div id="subtotal">
+                <h3>Carts Total</h3>
+                <table>
+                    <tr>
+                        <td>Cart SubTotal</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr >
+                        <td>Total</td>
+                        <td id="total"></td>
+                    </tr>
+                </table>
+
+                <button class="normal" id="checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <script src="js/cart.js"></script>
+
+</body>
+
+</html>

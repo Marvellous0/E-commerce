@@ -1,17 +1,12 @@
 const homeBtn = document.querySelector('#home');
 const productBtn = document.querySelector('#product');
-const cartBtn = document.querySelector('#cartBtn');
 
 homeBtn.addEventListener('click', () => {
-    location.href = "/index.html";
+    location.href = "/customerDashboard.html";
 })
 
 productBtn.addEventListener('click', () => {
     location.href = "/product.html";
-})
-
-cartBtn.addEventListener('click', () => {
-    location.href = "/cart.html";
 })
 
 const availableCartNumber = () => {
