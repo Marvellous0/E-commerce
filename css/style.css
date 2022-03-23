@@ -282,7 +282,7 @@
     
     #products .pro .description i {
         font-size: 12px;
-        color: #77889973;
+        color: #cfcfcf;
     }
     
     #products .pro .description h4 {
@@ -834,4 +834,33 @@
             width: 100%;
             padding: 20px;
         }
+
+        .modal-body{
+            height: 400px;
+           width: 300px;
+        }
+
+        .modal-img {
+            height: 180px;
+        }
+
+        .desc{
+            font-size: 13px;
+            height: 100px;
+        }
+
+        
+            .addToCart {
+                display: flex;
+                justify-content: center;
+                background-color: darkorange;
+                padding: .5rem;
+                cursor: pointer;
+                background-color: darkorange;
+                font-weight: bolder;
+                color: white;
+                border: none;
+                outline: none;
+            }
+        
     }

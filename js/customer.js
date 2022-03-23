@@ -79,7 +79,7 @@ const popUpModal = () => {
     const plus = document.querySelector('#plus');
     const totalPrice = document.querySelector('#total-price');
     let qty = document.querySelector('#qty');
-    
+
 
     minus.addEventListener('click', () => {
         let productDetails1 = JSON.parse(localStorage.getItem('productList'));
@@ -122,7 +122,12 @@ const popUpModal = () => {
                 stars[i].addEventListener('click', () =>{
                     rate.textContent = i + 1;
                     rate.value = i + 1;
-                    stars[i].classList.add('active-star');
+                    if(stars[i].classList != 'active-star'){
+                        stars[i].classList.add('active-star');
+                    }
+                   else{
+                    stars[i].classList.remove('active-star');
+                   }
                 })
             }
             const quantity = document.querySelector('#qty');
@@ -136,7 +141,7 @@ const popUpModal = () => {
                 addedItem == undefined ? productQty = 1 : productQty = addedItem.quantity
                 addedItem == undefined ? productRating = 0 : productRating = addedItem.rating
             }
-          
+
             let productDetails = JSON.parse(localStorage.getItem('productList'));
             const productItem = productDetails.find(c => c.id == addBtn.id);
 
@@ -145,7 +150,7 @@ const popUpModal = () => {
                 categoryName: productItem.productCategory,
                 productDescription: productItem.productdescription,
                 quantity: productQty,
-                rating : productRating,
+                rating: productRating,
                 unitPrice: productItem.productprice
             }
 
@@ -171,7 +176,7 @@ const populateModal = (modalItem) => {
     const totalPrice = document.querySelector('#total-price');
     const rate = document.querySelector('.rate');
     rate.textContent = modalItem.rating,
-    productName.textContent = modalItem.productName;
+        productName.textContent = modalItem.productName;
     qty.value = modalItem.quantity,
         categoryName.textContent = modalItem.categoryName;
     productDescription.textContent = modalItem.productDescription;
@@ -180,28 +185,7 @@ const populateModal = (modalItem) => {
 }
 
 const updateQuantity = (uPrice) => {
-    // const minus = document.querySelector('#minus');
-    // const plus = document.querySelector('#plus');
-    // let qty = document.querySelector('#qty');
-    // const totalPrice = document.querySelector('#total-price');
-
-    // minus.addEventListener('click', () => {
-    //     if (qty.value > 1) {
-    //         console.log("minus", qty.value);
-    //         qty.value--;
-    //         totalPrice.textContent = uPrice * qty.value
-    //     }
-    // })
-
-    // plus.addEventListener('click', () => {
-    //     console.log("plus", qty.value);
-    //     qty.value++;
-    //     totalPrice.textContent = uPrice * qty.value
-    // })
-
-    // qty.addEventListener('change', () => {
-    //     totalPrice.textContent = uPrice * qty.value
-    // })
+    
 }
 
 
@@ -216,9 +200,8 @@ const addToCart = () => {
         const rate = document.querySelector('.rate');
         const rateVal = rate.value;
         for (let i = 0; i < stars.length; i++) {
-            stars[i].addEventListener('click', () =>{
+            stars[i].addEventListener('click', () => {
                 rate.textContent = i + 1;
-                rateVal = i++;
                 stars[i].classList.add('active-star');
             })
         }
@@ -268,11 +251,13 @@ const availableCartNumber = () => {
 }
 
 const logOutBtn = document.querySelector('#log-out');
-logOutBtn.addEventListener('click', () =>{
+logOutBtn.addEventListener('click', () => {
     localStorage.removeItem('loginInfo');
     localStorage.removeItem('productIncart');
     location.href = '/index.html';
 })
+
+
 
 displayProduct();
 popUpModal();

@@ -45,7 +45,7 @@ const displayCart = () => {
 
         pQuantity.addEventListener('change', () => {
             uPrice.textContent = modalItem.unitPrice * pQuantity.value
-            // total.textContent = modalItem.unitPrice * pQuantity.value
+            total.textContent = modalItem.unitPrice * pQuantity.value
         })
     }
 
@@ -68,13 +68,6 @@ checkOutBtn.addEventListener('click', (e) => {
     let user = JSON.parse(localStorage.getItem('loginInfo'));
     let objectLenght = Object.keys(user).length;
    
-    // user.forEach((i) => {
-    //     if (i.name > -1) {
-    //         location.href = '/checkout.html';
-    //     } else {
-    //         location.href = '/login.html';
-    //     }
-    // })
     if(objectLenght == 2){
         location.href = '/checkout.html';
     }

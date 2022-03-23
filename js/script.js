@@ -120,8 +120,22 @@ const popUpModal = () => {
         c.addEventListener('click', () => {
             let items = JSON.parse(localStorage.getItem('productIncart'));
             const modalContainer = document.querySelector('.modal-cotainer');
-            const modalBody = document.querySelector('.modal-body');
             const closes = document.querySelector('.close');
+            const stars = document.querySelectorAll('.rating i');
+            const rate = document.querySelector('.rate');
+
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].addEventListener('click', () =>{
+                    rate.textContent = i + 1;
+                    rate.value = i + 1;
+                    if(stars[i].classList != 'active-star'){
+                        stars[i].classList.add('active-star');
+                    }
+                   else{
+                    stars[i].classList.remove('active-star');
+                   }
+                })
+            }
 
             const quantity = document.querySelector('#qty');
 
@@ -224,28 +238,7 @@ const availableCartNumber = () => {
     let productNumbers = items == null ? 0 : items.length;
     numberCount.textContent = productNumbers;
 }
-// const updateCartTotal = () => {
-//     var cartItemContainer = document.querySelector('.product');
-//     console.log(cartItemContainer);
-//     var cartRows = cartItemContainer.getElementsByClassName('cart-rows')
-//     console.log(cartRows);
-//     var total = 0
-//     for (var i = 0; i < cartRows.length; i++) {
-//         var cartRow = cartRows[i]
-//         var priceElement = cartRow.getElementsById('cart-price')[0]
-//         var quantityElement = cartRow.getElementsById('cart-quantity')[0]
-//         var price = parseFloat(priceElement.innerText.replace('$', ''))
-//         var quantity = quantityElement.value
-//         total = total + (price * quantity)
-//     }
-//     total = Math.round(total * 100) / 100
-//     document.getElementById('total')[0].innerText = '$' + total
-// }
 
-
-// table.addEventListener('click', removeCart)
-
-// onLoadCartNumbers();
 displayAvailableProduct();
 popUpModal();
 addToCart();
