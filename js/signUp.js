@@ -11,6 +11,7 @@ const SignUp = () => {
     const emailAddress = document.querySelector("#emailAddress");
     const password = document.querySelector("#password");
     const confirmPassword = document.querySelector("#confirmPassword");
+    const role = document.querySelector("#role");
 
     continueBtn.addEventListener("click", (e) => {
         e.preventDefault()
@@ -54,7 +55,7 @@ const SignUp = () => {
             emailaddress: emailAddress.value,
             password: password.value,
             confirmpassword: confirmPassword.value,
-            role: "admin"
+            role: role.value,
         }
 
         signUpInfoArray.push(info);
