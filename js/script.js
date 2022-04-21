@@ -31,23 +31,6 @@ cartBtn.addEventListener('click', () => {
 })
 
 
-var table = document.querySelector('table');
-
-const removeCart = (e) => {
-    e.preventDefault();
-    if (!e.target.classList.contains('remove')) {
-
-        return;
-    }
-
-    const btn = e.target;
-
-    btn.parentElement.parentElement.parentElement.remove();
-    let items = JSON.parse(localStorage.getItem('productIncart'));
-    console.log(items);
-
-}
-
 let cartItems1 = JSON.parse(localStorage.getItem('productList'));
 const displayAvailableProduct = () => {
     const container = document.querySelector('.pro-container');

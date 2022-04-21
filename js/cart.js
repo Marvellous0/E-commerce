@@ -60,11 +60,22 @@ const removeCart = () => {
     let items = JSON.parse(localStorage.getItem('productIncart'));
     let btn = document.querySelector('.remove');
 
-    btn.addEventListener('click', () => {
-        var newArray = items.filter((i => i.id != products.id))
-        console.log(newArray);
-    })
+    items.forEach((element) => {
+        const productId = element.productId;
+        let productDetails = JSON.parse(localStorage.getItem('productList'));
+        btn.addEventListener('click', () => {
+            if(items.length == 1)
+            {
+                localStorage.removeItem('productIncart');
+            }
 
+            else{
+                var newArray = productDetails.filter(i => i.id == productId);
+                localStorage.setItem('productIncart', JSON.stringify(newArray))
+            }
+            
+        }) 
+    })
 }
 
 const checkOutBtn = document.querySelector('#checkout');
@@ -82,12 +93,12 @@ checkOutBtn.addEventListener('click', (e) => {
     }
 });
 
-const logOutBtn = document.querySelector('#log-out');
-logOutBtn.addEventListener('click', () =>{
-    localStorage.removeItem('loginInfo');
-    localStorage.removeItem('productIncart');
-    location.href = '/index.html';
-})
+// const logOutBtn = document.querySelector('#log-out');
+// logOutBtn.addEventListener('click', () =>{
+//     localStorage.removeItem('loginInfo');
+//     localStorage.removeItem('productIncart');
+//     location.href = '/index.html';
+// })
 
 availableCartNumber();
 displayCart();
