@@ -54,7 +54,7 @@ const SignUp = () => {
             emailaddress: emailAddress.value,
             password: password.value,
             confirmpassword: confirmPassword.value,
-            role: "users"
+            role: "admin"
         }
 
         signUpInfoArray.push(info);
